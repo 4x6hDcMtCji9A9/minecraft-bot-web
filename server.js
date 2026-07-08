@@ -242,7 +242,7 @@ io.on('connection', (socket) => {
     });
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 server.listen(PORT, '0.0.0.0', () => {
     console.log(`🧍 Bot ESTÁTUA rodando na porta ${PORT}`);
     console.log(`🌐 http://localhost:${PORT}`);
