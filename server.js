@@ -21,8 +21,8 @@ const botConfigs = new Array(MAX_BOTS).fill(null).map((_, i) => ({
 const chatHistories = new Array(MAX_BOTS).fill(null).map(() => []);
 
 // Agendamento /survival
-schedule.scheduleJob('50 0 * * *', () => sendSurvivalToAllBots('00:50'));
-schedule.scheduleJob('50 12 * * *', () => sendSurvivalToAllBots('12:50'));
+schedule.scheduleJob('30 3 * * *', () => sendSurvivalToAllBots('3:30'));
+schedule.scheduleJob('30 15 * * *', () => sendSurvivalToAllBots('15:30'));
 
 function sendSurvivalToAllBots(timeLabel) {
     let sent = 0;
