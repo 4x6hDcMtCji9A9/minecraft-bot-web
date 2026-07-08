@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Bot Final - Auto /survival 03:30 e 15:30</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧍 Painel Multi-Bot Final</h1>
+            <div class="header-info">
+                <span class="mode-badge">❌ ESTÁTUA</span>
+                <span class="schedule-badge">⏰ 03:30 | 15:30</span>
+                <span class="bot-count">Online: <span id="onlineCount">0</span>/10</span>
+            </div>
+        </header>
+
+        <!-- Barra de comando personalizado -->
+        <div class="command-bar">
+            <div class="command-input-group">
+                <input type="text" id="customCommand" placeholder="Digite um comando para TODOS os bots...">
+                <button class="btn btn-command" onclick="sendCustomCommand()">⌨️ EXECUTAR EM TODOS</button>
+            </div>
+            <button class="btn btn-clear-all" onclick="clearAllChat()">🗑️ LIMPAR TODAS MENSAGENS</button>
+        </div>
+
+        <!-- Barra de /survival -->
+        <div class="survival-bar">
+            <span>⏰ Auto /survival: 03:30 e 15:30 | Filtros: Chat | Survival | Mortes | Erros | Sistema</span>
+            <button class="btn btn-survival-all" onclick="sendSurvivalAll()">⚔️ /survival TODOS</button>
+        </div>
+
+        <!-- Abas dos bots -->
+        <div class="tabs-nav" id="tabsNav"></div>
+        <div class="tabs-content" id="tabsContent"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

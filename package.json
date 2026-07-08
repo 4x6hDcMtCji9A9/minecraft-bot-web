@@ -1,0 +1,15 @@
+{
+  "name": "minecraft-bot-final",
+  "version": "5.0.0",
+  "description": "Bot NPC Estátua - Auto /survival 03:30 e 15:30 - Comando personalizado",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mineflayer": "^4.14.0",
+    "socket.io": "^4.7.4",
+    "node-schedule": "^2.1.1"
+  }
+}

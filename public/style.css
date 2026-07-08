@@ -1,0 +1,70 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,sans-serif;background:#1a1a2e;min-height:100vh;padding:10px;color:#fff}
+.container{max-width:100%}
+header{background:rgba(255,255,255,0.1);padding:15px;border-radius:10px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+h1{font-size:18px}
+.header-info{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.mode-badge{background:rgba(155,89,182,0.3);padding:6px 14px;border-radius:15px;font-size:11px;font-weight:700;border:1px solid #9b59b6;color:#9b59b6}
+.schedule-badge{background:rgba(243,156,18,0.3);padding:6px 14px;border-radius:15px;font-size:11px;font-weight:700;border:1px solid #f39c12;color:#f39c12}
+.bot-count{background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:15px;font-size:12px}
+.bot-count span{color:#4facfe;font-weight:700}
+
+.command-bar{background:rgba(255,255,255,0.1);padding:12px;border-radius:10px;margin-bottom:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.command-input-group{display:flex;gap:8px;flex:1;min-width:200px}
+.command-input-group input{flex:1;padding:10px;border:1px solid rgba(255,255,255,0.3);border-radius:8px;background:rgba(0,0,0,0.3);color:#fff;font-size:13px}
+.command-input-group input:focus{outline:none;border-color:#9b59b6;box-shadow:0 0 0 3px rgba(155,89,182,0.2)}
+.command-input-group input::placeholder{color:#7f8c8d}
+.btn-command{background:linear-gradient(135deg,#9b59b6,#8e44ad);color:#fff;padding:10px 20px;font-size:13px;font-weight:700;border:none;border-radius:8px;cursor:pointer;white-space:nowrap;animation:glow-purple 2s infinite}
+@keyframes glow-purple{0%,100%{box-shadow:0 0 5px rgba(155,89,182,0.5)}50%{box-shadow:0 0 20px rgba(155,89,182,0.8)}}
+.btn-clear-all{background:#e74c3c;color:#fff;padding:10px 20px;font-size:12px;font-weight:700;border:none;border-radius:8px;cursor:pointer;white-space:nowrap}
+
+.survival-bar{background:rgba(255,255,255,0.1);padding:10px;border-radius:8px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#f39c12}
+.btn-survival-all{background:#e74c3c;color:#fff;padding:8px 16px;font-size:11px;font-weight:700;border:none;border-radius:6px;cursor:pointer;animation:glow-red 2s infinite}
+@keyframes glow-red{0%,100%{box-shadow:0 0 5px rgba(231,76,60,0.5)}50%{box-shadow:0 0 20px rgba(231,76,60,0.8)}}
+
+.tabs-nav{display:flex;gap:4px;overflow-x:auto;padding:8px;background:rgba(255,255,255,0.05);border-radius:10px;margin-bottom:10px}
+.tabs-nav::-webkit-scrollbar{height:4px}
+.tabs-nav::-webkit-scrollbar-track{background:rgba(255,255,255,0.1)}
+.tabs-nav::-webkit-scrollbar-thumb{background:#667eea;border-radius:2px}
+.tab-btn{display:flex;align-items:center;gap:4px;padding:8px 12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#bdc3c7;cursor:pointer;font-size:11px;white-space:nowrap;min-width:90px;justify-content:center;transition:all 0.3s}
+.tab-btn:hover{background:rgba(255,255,255,0.15)}
+.tab-btn.active{background:#667eea;color:#fff}
+.tab-content{display:none}
+.tab-content.active{display:block;animation:fadeIn 0.3s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.bot-panel{display:grid;grid-template-columns:1fr 1.5fr;gap:10px}
+@media(max-width:768px){.bot-panel{grid-template-columns:1fr}}
+.config-panel,.chat-panel{background:rgba(255,255,255,0.08);padding:15px;border-radius:10px;border:1px solid rgba(255,255,255,0.1)}
+.panel-header{display:flex;justify-content:space-between;margin-bottom:10px}
+h2{font-size:14px}
+.bot-status-badge{padding:4px 10px;border-radius:12px;font-size:10px;font-weight:600}
+.bot-status-badge.online{background:rgba(46,204,113,0.2);color:#2ecc71;border:1px solid #2ecc71}
+.bot-status-badge.offline{background:rgba(231,76,60,0.2);color:#e74c3c;border:1px solid #e74c3c}
+.form-group{margin-bottom:8px}
+.form-group label{font-size:11px;color:#bdc3c7;display:block;margin-bottom:3px}
+.form-group input,.form-group select{width:100%;padding:8px;border:1px solid rgba(255,255,255,0.2);border-radius:6px;background:rgba(0,0,0,0.3);color:#fff;font-size:12px}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:#667eea}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.button-group{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.btn{padding:8px;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.btn:hover:not(:disabled){transform:translateY(-1px);opacity:0.9}
+.btn:disabled{opacity:0.5;cursor:not-allowed}
+.btn-connect{background:#667eea;color:#fff}
+.btn-disconnect{background:#e74c3c;color:#fff}
+.btn-survival{background:#f39c12;color:#fff}
+.btn-send{background:#4facfe;color:#fff}
+.chat-filters{display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap}
+.filter-btn{padding:4px 8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:12px;color:#bdc3c7;cursor:pointer;font-size:10px}
+.filter-btn:hover{background:rgba(255,255,255,0.2)}
+.filter-btn.active{background:#667eea;color:#fff;border-color:#667eea}
+.chat-messages{background:rgba(0,0,0,0.3);border-radius:6px;padding:10px;height:350px;overflow-y:auto;margin-bottom:8px;font-size:12px}
+.chat-placeholder{text-align:center;color:#7f8c8d;padding:20px;font-style:italic}
+.chat-message{margin-bottom:6px;padding:8px;border-radius:6px;background:rgba(255,255,255,0.05);border-left:3px solid #95a5a6;transition:all 0.3s}
+.message-header{display:flex;justify-content:space-between;font-size:10px;margin-bottom:3px}
+.message-username{font-weight:600}
+.message-time{color:#7f8c8d;font-size:9px}
+.message-content{color:#ecf0f1;font-size:11px;word-break:break-word}
+.chat-input-container{display:flex;gap:6px}
+.chat-input-container input{flex:1;padding:8px;border:1px solid rgba(255,255,255,0.2);border-radius:6px;background:rgba(0,0,0,0.3);color:#fff;font-size:12px}
+.chat-input-container input:focus{outline:none;border-color:#4facfe}
+.chat-input-container input:disabled{opacity:0.5}
