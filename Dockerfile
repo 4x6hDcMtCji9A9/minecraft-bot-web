@@ -1,9 +1,16 @@
-#!/bin/bash
+FROM node:20
 
-# 1. Inicia o socat em segundo plano (&)
-# Altere as portas conforme a sua necessidade de redirecionamento.
-# Exemplo: Escuta na porta 25565 e joga para o tráfego local
-socat TCP-LISTEN:25565,fork TCP:jogar.rederevo.com:25565 &
+# Instala o socat
+RUN apt-get update && apt-get install -y socat && rm -rf /var/lib/apt/lists/*
 
-# 2. Inicia o seu bot/servidor Node.js em primeiro plano
-exec node server.js
+WORKDIR /app
+
+# Copia os arquivos do projeto
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+# Garante permissão ao script de inicialização
+RUN chmod +x start.sh
+
+CMD ["./start.sh"]
