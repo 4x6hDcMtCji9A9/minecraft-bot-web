@@ -1,7 +1,16 @@
-#!/bin/bash
-clear
-echo "🧍 Iniciando Bot ESTÁTUA - Versão Final"
-echo "⏰ Auto /survival: 03:30 e 15:30"
-echo "⌨️ Comando personalizado | 🗑️ Limpar tudo"
-echo "════════════════════════════════════════"
-cd ~/multi-bot-panel-certo && node server.js
+FROM node:20
+
+# Instala o socat
+RUN apt-get update && apt-get install -y socat && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copia os arquivos do projeto
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+# Garante permissão ao script de inicialização
+RUN chmod +x start.sh
+
+CMD ["./start.sh"]
